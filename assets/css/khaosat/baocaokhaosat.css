@@ -1,0 +1,50 @@
+#baocao.table{
+    font-size: 10pt;
+}
+#baocao.table th{
+    text-align: center;
+    font-weight: 700;
+    vertical-align: middle;
+    padding: 5px;
+}
+#baocao.table td{
+    vertical-align: middle !important;
+    padding: 7px 5px;
+}
+.solieu{
+    width: 45px
+}
+#baocao th:last-child{
+    width: 100px;
+}
+#baocao .btn{
+    margin: 0 3px;
+}
+.linhvuc ul{
+    list-style: none;
+    padding-left: 0;
+}
+.linhvuc li{
+    padding: 10px 0;
+}
+#note{
+    display: flex;
+}
+#note .text-right{
+    justify-content: flex-end;
+}
+#note>span{
+    width: 50%;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+}
+#note .color{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+#piechart>div, #columnchart>div{
+    display: flex;
+    justify-content: center;
+}

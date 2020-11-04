@@ -1,0 +1,45 @@
+.so_sv_lopmon,.so_sv_chuaxep{
+    font-size: 22px;
+    font-weight: bold;
+    color: red;
+}
+dd,dt{
+    padding: 10px 0;
+}
+.tt{
+    margin-bottom: 13px;
+}
+.loading{
+    height: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 45%;
+}
+.loading i{
+    color:#ff7675;
+}
+.ojb{
+    width: 6px;
+    height: 20px;
+    background-color: red;
+    margin: 0 2px;
+    border-radius: 10px;
+    animation: loading 0.8s infinite;
+}
+.ojb:nth-child(2){
+    animation-delay: 0.08s;
+}
+.ojb:nth-child(3){
+    animation-delay: 0.16s;
+}
+@keyframes loading {
+    0%{
+        height: 0;
+    }
+    50%{
+        height: 40%;
+    }
+    100%{
+        height: 0;
+    }
+}

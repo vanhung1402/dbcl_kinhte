@@ -1,0 +1,47 @@
+.action{
+    padding: 30px 5px 100px;
+}
+#thongtin_lopmon{
+    padding: 5px 20px;
+}
+#thongtin_lopmon dt,dd{
+    padding: 5px 0;
+}
+#thongtin_lopmon dd{
+    font-weight: bold;
+    color: #218c74;
+}
+.txtb{
+    border-bottom: 2px solid #ddd;
+    position: relative;
+}
+.txtb input{
+    border: none;
+    width: 100%;
+    outline: none;
+}
+.txtb span::before{
+    content:'';
+    position: absolute;
+    top:50%;
+    left:5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition:.5s;
+}
+.txtb span::after{
+    display: block;
+    content:'';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(120deg,#3498db,#8e44ad);
+    transition: .5s;
+}
+.focus + span::after{
+    width: 100%;
+}
+input[name="tenlop"]{
+    color: #000;
+}

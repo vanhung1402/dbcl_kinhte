@@ -1,0 +1,17 @@
+th{
+	font-weight: 700;
+}
+table.table tbody td, table.table thead th{
+	padding: 5px 10px;
+	vertical-align: middle;
+}
+.user>div{
+	margin-bottom: 20px;
+}
+.area-heading{
+	margin-bottom: 10px;
+	padding: 1px;
+}
+#quanly .btn{
+    margin: 2px;
+}

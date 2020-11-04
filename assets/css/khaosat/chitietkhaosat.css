@@ -1,0 +1,53 @@
+#danhsach-sinhvien{
+
+}
+#danhsach-sinhvien tr:hover{
+    background-color: #f8f8f8;
+}
+#danhsach-sinhvien th{
+	text-align: center;
+	font-weight: 700;
+	text-transform: uppercase;
+	vertical-align: middle;
+}
+.hodem{
+	width: 70%;
+	display: inline-block;
+}
+.ten{
+	width: 30%;
+	display: inline-block;
+}
+#danhsach-sinhvien td{
+    vertical-align: middle;
+    padding: 7px 5px;
+}
+.panel-heading h3{
+    font-weight: 700;
+}
+.panel-heading p span:first-child{
+    font-weight: 400;   
+}
+
+.action{
+    margin-bottom: 20px;
+    text-align: right;
+}
+.action a{
+    padding: 5px 0;
+    padding-right: 10px;
+    margin: 0 5px;
+    transition: color 1s;
+}
+.action a:first-child{
+    border-bottom: 2px solid #28c7fa;
+    color: #28c7fa;
+}
+.action a:last-child{
+    border-bottom: 2px solid #22eaaa;
+    color: #22eaaa;
+}
+.action a:hover{
+    color: #333;
+    border-bottom-color: #333;
+}

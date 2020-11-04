@@ -1,0 +1,50 @@
+#dotkhaosat table tr th:not(:last-child){
+	text-align: center;
+	font-weight: 700;
+	vertical-align: middle;
+}
+#dotkhaosat table tr th:last-child{
+	text-align: right;
+	font-weight: 700;
+	vertical-align: middle;
+}
+#dotkhaosat table tr td:not(:last-child){
+	text-align: center;
+	font-weight: 400;
+	vertical-align: middle;
+}
+#load-dot{
+	min-height: 375px;
+}
+#load-dot th{
+	font-weight: 700;
+	text-align: center;
+	vertical-align: middle;
+}
+#load-dot td{
+	vertical-align: middle;
+}
+#ngaybatdau, #ngayketthuc, #ngaybatdauall, #ngayketthucall{
+	font-weight: 700;
+}
+.table>tbody>tr>td.tacvu-dotkhaosat{
+	padding: 0;
+	vertical-align: middle;
+}
+.tacvu-dotkhaosat .btn, .lopmon .btn, #config .btn{
+	margin: 2px;
+}
+#heading-lopmon {
+	display: flex;
+	align-items: center;
+}
+#heading-lopmon .form-group{
+	margin: 0;
+}
+.text-bold{
+	font-weight: 700;
+}
+
+#dslopmon td{
+	font-size: 12px;
+}

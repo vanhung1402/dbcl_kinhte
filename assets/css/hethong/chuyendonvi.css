@@ -1,0 +1,31 @@
+.box{
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: 25px;
+	margin-top: 25px;
+}
+.box-body{
+	background-color: #FFF;
+}
+.ten{
+	display: inline-block;
+}
+.white-box{
+	margin: 0;
+	padding-top: 0;
+}
+.box-title{
+	font-weight: 700;
+}
+.chuahoanthanh{
+	font-size: 16pt;
+}
+.block{
+	display: inline-block;
+}
+.khoa {
+	padding: 15px;
+}
+.khoa img{
+	width: 50%;
+	margin: 15px;
+}

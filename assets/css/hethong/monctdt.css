@@ -1,0 +1,36 @@
+#mon-giangvien select *{
+    padding: 5px 10px;
+}
+#mon-giangvien select *:hover{
+    background-color: #ecfffb;
+}
+.td-50 {
+        width: 50px !important;
+}
+.td-150 {
+        width: 150px !important;
+}
+.td-200 {
+    width: 200px !important;
+}
+.td-300 {
+    width: 300px !important;
+}
+.td-400 {
+    width: 400px !important;
+}
+.table-striped>thead>tr:nth-child(odd)>th {
+    background-color: #f9f9f9;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: 8px;
+}
+.cangiua{
+    text-align: center;
+}
+table th{
+    font-weight: 700;
+}
+table td, table th{
+    vertical-align: middle !important;
+}

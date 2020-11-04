@@ -1,0 +1,10 @@
+th{
+    font-weight: 700;
+}
+table.table tbody td, table.table thead th{
+    padding: 10px;
+    vertical-align: middle;
+}
+table .btn{
+    margin: 2px;
+}

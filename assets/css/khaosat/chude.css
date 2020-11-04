@@ -1,0 +1,92 @@
+.chude-container button{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.topic{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+	padding-left: 5px;
+	border-left: 2px solid transparent;
+}
+.topic.form-group{
+	margin-bottom: 5px;
+}
+.topic .index-topic{
+	width: 25px;
+	margin-right: 5px;
+	text-align: right;
+	font-weight: bold;
+}
+.topic .title-topic{
+	width: calc(100% - 200px);
+}
+.topic .title-topic:hover{
+	color: blue;
+}
+.topic:hover{
+	border-left: 2px solid #3d5af1;
+}
+.topic .manage-topic{
+	display: flex;
+	/*display: none;*/
+	width: 150px;
+	margin-bottom: 0;
+	flex-wrap: nowrap;
+}
+.topic .manage-topic button i{
+	transition: font-size 0.3s;
+}
+.topic .manage-topic button:hover i{
+	font-weight: bold;
+	font-size: 30px;
+}
+.topic .title-topic:hover + .manage-topic, .topic .manage-topic:hover{
+	/*display: flex;*/
+}
+.topic .title-topic:hover + .manage-topic{
+	color: blue;
+}
+.topic .manage-topic:hover - .title-topic{
+	color: blue;
+}
+.topic button{
+	width: 25%;
+	padding: 0;
+	margin: 0;
+	background: transparent;
+}
+.topic button:hover{
+	/* border: 1px inset transparent;
+	border-radius: 50%;
+	color: #FFF; */
+	font-weight: bold;
+}
+.topic .remove-topic:hover{
+	color: #f85959;
+}
+.topic .add-child:hover{
+	color: #28c7fa;
+}
+.topic .move-up:hover{
+	color: #12e2a3;
+}
+.topic .move-down:hover{
+	color: #ec9454;
+}
+.topic .child{
+	width: calc(100% - 20px);
+	margin: 10px 0 0 20px;
+}
+
+.button-action, .button-action .btn{
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#add-main-topic{
+	border-color: transparent;
+}
