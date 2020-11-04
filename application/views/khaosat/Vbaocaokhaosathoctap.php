@@ -83,7 +83,7 @@
                         <tr>
                             <th>STT</th>
                             <th>Môn học</th>
-                            <th>Mã GV</th>
+                            <!-- <th>Mã GV</th> -->
                             <th>Giảng viên</th>
                             <th>Học hàm, học vị</th>
                             <th class="solieu">Số phiếu</th>
@@ -104,16 +104,18 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {$tongsophieu = 0}
+                        {$tongdkhaosat = 0}
                         {foreach $baocao.mapbaocao as $mcb => $gv}
                         {foreach $gv as $mmh => $m}
                         <tr>
                             <td class="text-center">{$m.stt}</td>
                             <td>{$m.monhoc} {$m.khoiluong}</td>
-                            <td>{$mcb}</td>
+                            <!-- <td>{$mcb}</td> -->
                             <td>{$m.tencanbo}</td>
                             <td>{$m.hocham}</td>
-                            <td class="text-center sophieu">{$m.sophieu}</td>
-                            <td class="text-center dakhaosat">{$m.dakhaosat}</td>
+                            <td class="text-center sophieu">{$m.sophieu}{$tongsophieu = $tongsophieu + $m.sophieu}</td>
+                            <td class="text-center dakhaosat">{$m.dakhaosat}{$tongdakhaosat = $tongdakhaosat + $m.dakhaosat}</td>
                             <td class="text-center tylekhaosat">{$m.tylekhaosat}%</td>
                             {foreach $baocao.linhvuc as $mn => $n}
                             <td class="text-center tylelinhvuc">{$m.hailong[$mn]}%</td>
@@ -134,6 +136,12 @@
                         {/foreach}
                     </tbody>
                 </table>
+
+                <div class="m-t-5">
+                    <h5><strong>Tổng số phiếu: </strong><i>{$tongsophieu}</i></h5>
+                    <h5><strong>Tổng số phiếu đã khảo sát: </strong><i>{$tongdakhaosat}</i></h5>
+                    <h5><strong>Tỷ lệ khảo sát khảo sát: </strong><i>{round($tongdakhaosat * 100 / $tongsophieu, 2)}%</i></h5>
+                </div>
             </div>
             {/if}
         </div>
