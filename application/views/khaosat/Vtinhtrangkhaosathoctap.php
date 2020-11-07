@@ -31,7 +31,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="input-group">
                         <span class="input-group-addon">Lớp:</span>
                         <select name="lop" id="lop" class="loc-item form-control select2" required>
@@ -41,9 +41,22 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-1 text-right">
-                    <button class="fcbtn btn btn-sm btn-outline btn-info btn-1e" name="action" value="loc">
-                        <i class="fa fa-search"></i>
+                <div class="col-md-4 m-t-5">
+                    <div class="input-group">
+                        <span class="input-group-addon">Tiêu chí:</span>
+                        <select name="tieuchi" id="tieuchi" class="loc-item form-control select2" required>
+                            {foreach $dstieuchi as $tc}
+                            <option value="{$tc.ma_tieuchi}" {if $tc.ma_tieuchi == $tinhtrang.tieuchi}selected{/if}>{$tc.ten_tieuchi}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-8 m-t-5 text-right">
+                    <button class="fcbtn btn btn-xs btn-outline btn-info btn-1e" name="action" value="loc">
+                        <strong><i class="fa fa-search"></i> &nbsp; LỌC</strong>
+                    </button>
+                    <button class="fcbtn btn btn-sm btn-outline btn-success btn-1e" name="action" value="xuatexcel">
+                        <strong><i class="fa fa-file-excel-o"></i> &nbsp; XUẤT EXCEL</strong>
                     </button>
                 </div>
             </div>

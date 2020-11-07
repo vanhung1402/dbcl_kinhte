@@ -100,6 +100,18 @@
 			$this->db->order_by('ten_lopmon');
 			return $this->db->get()->result_array();
 		}
+
+		public function layThongTinDotKhaoSat($dot){
+			$this->db->from('tbl_dotkhaosat dks');
+			$this->db->join('tbl_khaosat ks', 'dks.ma_khaosat = ks.ma_khaosat', 'inner');
+			$this->db->where('ma_dotkhaosat', $dot);
+			return $this->db->get()->row_array();
+		}
+
+		public function layThongTinLopHanhChinh($lop){
+			$this->db->where('ma_lop', $lop);
+			return $this->db->get('tbl_lop')->row_array();
+		}
 	}
 
 ?>

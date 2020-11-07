@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{$url}assets/css/khaosat/baocaokhaosat.css">
+<link rel="stylesheet" href="{$url}assets/css/khaosat/baocaokhaosat.css?ver=1.001">
 
 <div class="panel panel-default block m-t-5">
     <div class="panel-heading">
@@ -6,7 +6,7 @@
 
         <form method="POST">
             <div class="loc row">
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <div class="input-group">
                         <span class="input-group-addon">Hình thức:</span>
                         <select name="hinhthuc" id="hinhthuc" class="loc-item form-control select2" required>
@@ -16,7 +16,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <div class="input-group">
                         <span class="input-group-addon">Đợt:</span>
                         <select name="hocvu" id="hocvu" class="loc-item form-control select2" required>
@@ -26,9 +26,12 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-2 text-right">
+                <div class="col-md-4 text-right">
                     <button class="fcbtn btn btn-xs btn-outline btn-info btn-1e" name="action" value="loc">
-                        <i class="fa fa-search"></i>
+                        <strong><i class="fa fa-search"></i> &nbsp; LỌC</strong>
+                    </button>
+                    <button class="fcbtn btn btn-sm btn-outline btn-success btn-1e" name="action" value="xuatexcel">
+                        <strong><i class="fa fa-file-excel-o"></i> &nbsp; XUẤT EXCEL</strong>
                     </button>
                 </div>
             </div>
@@ -85,7 +88,7 @@
                             <th>Môn học</th>
                             <!-- <th>Mã GV</th> -->
                             <th>Giảng viên</th>
-                            <th>Học hàm, học vị</th>
+                            <th class="solieu">Học hàm, học vị</th>
                             <th class="solieu">Số phiếu</th>
                             <th class="solieu">Đã khảo sát</th>
                             <th class="solieu">Tỷ lệ khảo sát</th>
@@ -93,7 +96,7 @@
                             <th class="solieu">{$lv.alias_name}</th>
                             {/foreach}
                             <th class="solieu">Trung bình</th>
-                            <th>
+                            <th class="btn-action">
                                 <a href="khaosathoctap/danhgia?dot={$baocao.hocvu}" class="btn btn-xs btn-info" title="In phiếu đánh giá" target="_blank">
                                     <i class="fa fa-print"></i>
                                 </a>
@@ -105,7 +108,7 @@
                     </thead>
                     <tbody>
                         {$tongsophieu = 0}
-                        {$tongdkhaosat = 0}
+                        {$tongdakhaosat = 0}
                         {foreach $baocao.mapbaocao as $mcb => $gv}
                         {foreach $gv as $mmh => $m}
                         <tr>
@@ -135,12 +138,25 @@
                         {/foreach}
                         {/foreach}
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <th class="text-center" colspan="4">Tổng:</th>
+                            <th class="text-center">{$tongsophieu}</th>
+                            <th class="text-center">{$tongdakhaosat}</th>
+                            <th class="text-center">{round($tongdakhaosat * 100 / $tongsophieu, 2)}%</th>
+                            {foreach $baocao.linhvuc as $mn => $lv}
+                            <th class="text-center hailong-{$mn}">{$lv.chiso}%</th>
+                            {/foreach}
+                            <th class="text-center tongtbhailong"></th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
                 </table>
 
-                <div class="m-t-5">
-                    <h5><strong>Tổng số phiếu: </strong><i>{$tongsophieu}</i></h5>
-                    <h5><strong>Tổng số phiếu đã khảo sát: </strong><i>{$tongdakhaosat}</i></h5>
-                    <h5><strong>Tỷ lệ khảo sát khảo sát: </strong><i>{round($tongdakhaosat * 100 / $tongsophieu, 2)}%</i></h5>
+                <div class="m-t-5 baocao-tong">
+                    <h5><strong>Tổng số phiếu đang có: </strong><i>{$tongsophieu}</i></h5>
+                    <h5><strong>Tổng số phiếu đã hoàn thành: </strong><i>{$tongdakhaosat}</i></h5>
+                    <h5><strong>Tỷ lệ Hoàn thành: </strong><i>{round($tongdakhaosat * 100 / $tongsophieu, 2)}%</i></h5>
                 </div>
             </div>
             {/if}
@@ -174,6 +190,8 @@
             'hailong': Number({$baocao.tongchiso.hailong}),
             'khonghailong': Number({$baocao.tongchiso.danhgia}) - Number({$baocao.tongchiso.hailong}),
         });
+
+        $('.tongtbhailong').text('{round($baocao.tongchiso.hailong * 100 / $baocao.tongchiso.danhgia, 2)}%');
 
         loadColumnChart();
 

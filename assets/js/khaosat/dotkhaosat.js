@@ -21,6 +21,11 @@ $(document).ready(function() {
 		return {name: csrfName, hash: csrfHash};
 	}
 
+
+	setTimeout(() => {
+		$('.load-dot:eq(0)').trigger('click');
+	}, 500);
+
 	$(document).on('click', 'a[name="load-dot"]', function(event) {
 		let ma_dotkhaosat 	= $(this).attr('data-id').trim();
 		let tr 				= $(this).closest('tr');
@@ -78,7 +83,7 @@ $(document).ready(function() {
 		let dakhaosat = 0;
 		
 		dslopmon.forEach( function(lm, index) {
-			let danger = (lm.chitiet.sosinhvien !== lm.chitiet.sophieu) ? ' text-danger text-bold' : '';
+			let danger = (lm.chitiet.sosinhvien !== lm.chitiet.sophieu) ? 'text-danger text-bold' : '';
 
 			let xoaphieu_lopmon = (lm.chitiet.dakhaosat > 0) ? '' :
 					`<button value="${lm.ma_lopmon}" name="xoaphieu" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" data-original-title="Loại bỏ phiếu khảo sát cho lớp môn này">
@@ -87,7 +92,7 @@ $(document).ready(function() {
 
             /*<td class="text-center"><label class="label label-${trangthai_lopmon_obj[lm.madm_trangthai_lopmon]}">${lm.tendm_trangthai_lopmon}</label></td>*/
 
-			dslopmon_html += `<tr data-id="${lm.ma_lopmon}" class="lopmon${danger}">
+			dslopmon_html += `<tr data-id="${lm.ma_lopmon}" class="lopmon ${danger}">
 				<td class="text-center">
 					<input tabindex="9" type="checkbox" class="check-lopmon">
                 </td>
@@ -96,8 +101,8 @@ $(document).ready(function() {
 				<td class="text-center">${lm.nbd}<br>${lm.nkt}</td>
 				<td class="text-center nks">${(lm.nbdks) ? `${lm.nbdks}<br>${lm.nktks}` : 'Chưa đặt'}</td>
 				<td class="text-center">${lm.ma_hinhthuc}</td>
-				<td class="text-center">${lm.chitiet.sosinhvien}</td>
-				<td class="text-center${danger}">${lm.chitiet.sophieu}</td>
+				<td class="text-center sosinhvien">${lm.chitiet.sosinhvien}</td>
+				<td class="text-center sophieu ${danger}">${lm.chitiet.sophieu}</td>
 				<td class="text-center">${lm.chitiet.dakhaosat}</td>
 				<td class="text-center">
 					<button value="${lm.ma_lopmon}" start-date="${lm.nbdks}" end-date="${lm.nktks}" name="suangaykhaosat" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" data-original-title="Thay đổi mốc khảo sát">
@@ -534,24 +539,56 @@ $(document).ready(function() {
 		}, 500);
 	});
 
-	$(document).on('keyup', '#timkiem input', function(event) {
-		let key = $(this).val().trim();
+	function locLopMon(){
+		let key = $('#timkiem input').val().trim();
+		let thoigian = $('#locngay').val();
+		let tinhtrangtphieu = $('#locphieu').val();
 
-		setTimeout(function(){
-			if (key === '') {
-				$('.lopmon').removeClass('hidden');
+		if (key === '') {
+			$('.lopmon').removeClass('hidden');
+		}
+
+		$('.lopmon').each( (index, el) => {
+			let ten_lopmon = $(el).find('.ten-lopmon').text().trim().replace('<br>', ' ');
+			let tgks_lopmon = $(el).find('.nks').text().trim().replace('<br>', ' ');
+			let sosinhvien = $(el).find('.sosinhvien').text().trim();
+			let sophieu = $(el).find('.sophieu').text().trim();
+			let isShow = true;
+
+			if (ten_lopmon.indexOf(key) === -1) {
+				isShow = false;
 			}
 
-			$('.lopmon').each( (index, el) => {
-				let ten_lopmon = $(el).find('.ten-lopmon').html().trim().replace('<br>', ' ');
-
-				if (ten_lopmon.indexOf(key) !== -1) {
-					$('.lopmon').eq(index).removeClass('hidden');
-				}else{
-					$('.lopmon').eq(index).addClass('hidden');
+			if (thoigian !== 'all') {
+				if (thoigian === 'dadat' && tgks_lopmon === 'Chưa đặt') {
+					isShow = false;
 				}
-			});
+				if (thoigian === 'chuadat' && tgks_lopmon !== 'Chưa đặt') {
+					isShow = false;
+				}
+			}
+
+			if (tinhtrangtphieu !== 'all') {
+				if (tinhtrangtphieu === 'chuadu' && sosinhvien === sophieu) {
+					isShow = false;
+				}
+				if (tinhtrangtphieu === 'dadu' && sosinhvien !== sophieu) {
+					isShow = false;
+				}
+			}
+
+			(isShow) ? $('.lopmon').eq(index).removeClass('hidden') : $('.lopmon').eq(index).addClass('hidden');
+		});
+	}
+
+	$(document).on('keyup', '#timkiem input', function(event) {
+		setTimeout(function(){
+			locLopMon();
 		}, 500);
+	});
+
+	$(document).on('change', '#locngay, #locphieu', function(event) {
+		locLopMon();
 	});
 
 	$(document).on('click', 'button[name="xoadot"]', function(event) {

@@ -113,7 +113,7 @@
 	                            	</span>
 	                            </td>
 	                            <td class="tacvu-dotkhaosat text-center">
-	                            	<a href="{$url}khaosathoctap/dot?khaosat={$ma_khaosat}#danhsach-lopmon" value="{$dks.ma_dotkhaosat}" data-id="{$dks.ma_dotkhaosat}" name="load-dot" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="top" data-original-title="Quản lý lớp môn khảo sát">
+	                            	<a href="{$url}khaosathoctap/dot?khaosat={$ma_khaosat}#danhsach-lopmon" value="{$dks.ma_dotkhaosat}" data-id="{$dks.ma_dotkhaosat}" name="load-dot" class="btn btn-xs btn-primary load-dot" data-toggle="tooltip" data-placement="top" data-original-title="Quản lý lớp môn khảo sát">
 	                        			<i class="ti-pencil-alt"></i>
 	                        		</a>
 	                        		<!-- <button type="button" class="btn btn-xs btn-info btn-change-timerange" value="{$dks.ma_dotkhaosat}" data-toggle="modal" data-target="#sua-dotkhaosat-modal">
@@ -215,18 +215,44 @@
 </form>
 
 <div class="panel panel-default m-t-5 hidden" id="load-dot">
-    <div class="panel-heading text-uppercase">
+    <div class="panel-heading text-uppercase text-center">
     	Đợt khảo sát học vụ: <span id="donvihocvu"></span>
     </div>
     <div class="panel-wrapper collapse in">
         <div class="panel-body">
         	<div class="row">
-        		<dic class="col-md-6" id="timkiem">
+        		<div class="col-md-3">
         			<div class="form-group">
-        				<input type="text" class="form-control" placeholder="Nhập tên hoặc mã lớp môn để tìm kiếm...">
+        				<div class="input-group">
+	                        <span class="input-group-addon">T.gian khảo sát:</span>
+	                        <select name="locngay" id="locngay" class="form-control select2 loc-lopmon-item">
+	                            <option value="all">--- Không lọc ---</option>
+	                            <option value="chuadat">Chưa đặt ngày</option>
+	                            <option value="dadat">Đã đặt ngày</option>
+	                        </select>
+	                    </div>
         			</div>
-        		</dic>
-        		<dic class="col-md-6" id="config">
+        		</div>
+        		<div class="col-md-3">
+        			<div class="form-group">
+        				<div class="input-group">
+	                        <span class="input-group-addon">Tình trạng phiếu:</span>
+	                        <select name="locphieu" id="locphieu" class="form-control select2 loc-lopmon-item">
+	                            <option value="all">--- Không lọc ---</option>
+	                            <option value="chuadu">Chưa đủ phiếu</option>
+	                            <option value="dadu">Đã đủ phiếu</option>
+	                        </select>
+	                    </div>
+        			</div>
+        		</div>
+        	</div>
+        	<div class="row">
+        		<div class="col-md-6" id="timkiem">
+        			<div class="form-group">
+        				<input type="text" class="form-control loc-lopmon-item" placeholder="Nhập tên hoặc mã lớp môn để lọc...">
+        			</div>
+        		</div>
+        		<div class="col-md-6" id="config">
         			<div class="form-group text-right">
 	    				<button class="btn btn-info btn-outline" id="config-dotkhaosat" title="Đặt mốc khảo sát cho các lớp môn đã chọn">
 	    					<i class="fa fa-spin fa-cog"></i> &nbsp; Đặt mốc khảo sát
@@ -238,7 +264,7 @@
 	    					<i class="ti-cut"></i> &nbsp; Hủy phiếu khảo sát
 	    				</button>
 	    			</div>
-        		</dic>
+        		</div>
         	</div>
         	<div class="table-responsive">
 	        	<table class="table table-bordered table-hover" id="dslopmon">
@@ -338,4 +364,4 @@
 <script type="text/javascript" src="{$url}assets/plugins/bower_components/moment/moment.js"></script>
 <script src="{$url}assets/plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-<script type="text/javascript" src="{$url}assets/js/khaosat/dotkhaosat.js?ver=1.01"></script>
+<script type="text/javascript" src="{$url}assets/js/khaosat/dotkhaosat.js?ver=1.02"></script>

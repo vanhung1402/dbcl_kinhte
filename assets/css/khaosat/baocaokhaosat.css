@@ -10,6 +10,7 @@
 #baocao.table td{
     vertical-align: middle !important;
     padding: 7px 5px;
+    font-size: 12px;
 }
 .solieu{
     width: 45px
@@ -47,4 +48,12 @@
 #piechart>div, #columnchart>div{
     display: flex;
     justify-content: center;
+}
+.baocao-tong h5:hover{
+    color: #3cd0cc;
+    transition: color .5s;
+}
+.baocao-tong strong{
+    display: inline-block;
+    min-width: 275px;
 }

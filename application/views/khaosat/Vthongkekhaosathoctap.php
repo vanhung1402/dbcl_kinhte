@@ -4,7 +4,7 @@
 
         <form method="POST">
             <div class="loc row">
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <div class="input-group">
                         <span class="input-group-addon">Hình thức:</span>
                         <select name="hinhthuc" id="hinhthuc" class="loc-item form-control select2" required>
@@ -14,7 +14,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <div class="input-group">
                         <span class="input-group-addon">Đợt:</span>
                         <select name="hocvu" id="hocvu" class="loc-item form-control select2" required>
@@ -24,9 +24,9 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-2 text-right">
+                <div class="col-md-4 text-right">
                     <button class="fcbtn btn btn-sm btn-outline btn-info btn-1e" name="action" value="loc">
-                        <i class="fa fa-search"></i>
+                        <strong><i class="fa fa-search"></i> &nbsp; LỌC</strong>
                     </button>
                 </div>
             </div>
@@ -63,10 +63,10 @@
                         <td>{trim($lop.hodem_cb)} {$lop.ten_cb}</td>
                         <td class="text-center">{$lop.sosinhvien}</td>
                         <td class="text-center">
-                            {if isset($dschuakhaosat[$ml])}{$lop.sosinhvien - $dschuakhaosat[$ml]}{else}<i class="mdi mdi-close"></i>{/if}
+                            {if isset($dschuakhaosat[$ml])}{$lop.sosinhvien - $dschuakhaosat[$ml]}{else}0{/if}
                         </td>
                         <td class="text-center">
-                            {if isset($dschuakhaosat[$ml])}{$dschuakhaosat[$ml]}{else}<i class="mdi mdi-close"></i>{/if}
+                            {if isset($dschuakhaosat[$ml])}{$dschuakhaosat[$ml]}{else}0{/if}
                         </td>
                     </tr>
                     {/foreach}

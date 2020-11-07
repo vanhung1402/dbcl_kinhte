@@ -13,7 +13,7 @@
         <div class="panel-heading">
             <p class="text-uppercase text-center">QUẢN LÝ LỚP MÔN</p>
             <div class="loc row">
-                <div class="col-sm-4"> 
+                <div class="col-sm-3"> 
                     <div class="input-group">
                         <span class="input-group-addon">Đơn vị học vụ</span>
                         <select name="ma_dvhv" id="dvhv" class="form-control select2">
@@ -50,6 +50,11 @@
                         </select>
                     </div>
                 </div>
+                <div class="col-sm-3 text-right"> 
+                    <button class="fcbtn btn btn-sm btn-outline btn-success btn-1e" name="action" value="xuatexcel">
+                        <strong><i class="fa fa-file-excel-o"></i> &nbsp; XUẤT EXCEL</strong>
+                    </button>
+                </div>
             </div>
         </div>
         <div class="panel-wrapper collapse in">
@@ -59,11 +64,6 @@
                         <div class="form-group">
                             <input type="text" id="search" class="form-control" placeholder="Nhập tên hoặc mã lớp môn để tìm kiếm...">
                         </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <button class="btn btn-info waves-effect waves-light pull-right" type="submit" name="action" id="xuatexcel" value="xuatexcel"  title="Xuất Excel">
-                            <i class="fa fa-file-excel-o"></i> &nbsp; Xuất Excel
-                        </button>
                     </div>
                 </div>
                 <table class="table table-bordered table-hover">

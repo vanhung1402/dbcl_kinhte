@@ -163,6 +163,7 @@
 		</div>
 		<div class="foot">
 			<div class="giaovu text-center">
+                <p>&nbsp;</p>
 				<b>Giáo vụ</b>
 			</div>
 			<div class="giangvien text-center">

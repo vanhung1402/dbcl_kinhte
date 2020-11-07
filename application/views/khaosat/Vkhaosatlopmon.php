@@ -6,7 +6,7 @@
 
         <form method="POST">
             <div class="loc row">
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <div class="input-group">
                         <span class="input-group-addon">Hình thức:</span>
                         <select name="hinhthuc" id="hinhthuc" class="loc-item form-control select2" required>
@@ -16,7 +16,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <div class="input-group">
                         <span class="input-group-addon">Đợt:</span>
                         <select name="hocvu" id="hocvu" class="loc-item form-control select2" required>
@@ -27,9 +27,12 @@
                     </div>
                 </div>
 
-                <div class="col-md-2 text-right">
+                <div class="col-md-4 text-right">
                     <button class="fcbtn btn btn-sm btn-outline btn-info btn-1e" name="action" value="loc">
-                        <i class="fa fa-search"></i>
+                        <strong><i class="fa fa-search"></i> &nbsp; LỌC</strong>
+                    </button>
+                    <button class="fcbtn btn btn-sm btn-outline btn-success btn-1e" name="action" value="xuatexcel">
+                        <strong><i class="fa fa-file-excel-o"></i> &nbsp; XUẤT EXCEL</strong>
                     </button>
                 </div>
             </div>
@@ -68,7 +71,7 @@
                         <td class="text-center">{$lm.nbdks}</td>
                         <td class="text-center">{$lm.nktks}</td>
                         <td class="text-center">{$lm.sophieu}{$tongphieu = $tongphieu + $lm.sophieu}</td>
-                        <td class="text-center">{$lm.hoanthanh}{$tongkhaosat = $tongkhaosat + $lm.hoanthanh}</td>
+                        <td class="text-center {if $lm.sophieu != $lm.hoanthanh}text-danger{/if}">{$lm.hoanthanh}{$tongkhaosat = $tongkhaosat + $lm.hoanthanh}</td>
                         <td class="text-center">
                             <a href="{$url}khaosathoctap/inchitiet?lopmon={$lm.ma_lopmon}&dot={$dot}" class="btn btn-info btn-xs" target="_blank" data-toggle="tooltip" data-placement="left" data-original-title="In danh sách khảo sát lớp môn">
                                 <i class="ti-receipt"></i>
