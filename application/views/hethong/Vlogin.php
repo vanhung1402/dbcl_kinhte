@@ -68,7 +68,7 @@
                     {/if}
                 </form>
                 <p>Hỗ trợ kỹ thuật: <strong>0399 220 924 - 0394 684 487</strong></p>
-                <small>Sinh viên quên mật khẩu vui lòng liên hệ giáo vụ khoa hoặc cố vấn học tập</small>
+                <div><a href="{$url}caplaimatkhau">Quên mật khẩu?</a></div>
             </div>
         </div>            
 

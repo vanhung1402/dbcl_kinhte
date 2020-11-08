@@ -11,7 +11,7 @@ $(document).ready(function() {
     });
 
 	let lopmon_html = ``;
-	let onload_html = '<i class="fa fa-spin fa-circle-o-notch"></i>';
+	let onload_html = '<i class="fa fa-spin fa-circle-o-notch"></i> Đang tải dữ liệu...';
 	const fa_loading = '<i class="fa fa-spin fa-spinner"></i>';
 
 	function getCsrf(){

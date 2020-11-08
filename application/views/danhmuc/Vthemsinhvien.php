@@ -16,12 +16,12 @@
                   <input type="file" name="insert_excel" accept=".xlsx, .xls"  id="uploadExcel" required=""> </span> <a href="javascript:void(0)" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Xóa</a> 
                </div>
             </div>
-            <button type="submit" name="action" value="themsinhvien" class="btn btn-info waves-effect waves-light" data-toggle="modal">
+            <button type="submit" name="action" value="themsinhvien" class="btn btn-success waves-effect waves-light" data-toggle="modal">
             <span class="btn-label">
             <i class="fa fa-plus"></i>
-            </span>Thêm
+            </span>Upload
             </button>
-            <a class="btn btn-success waves-effect waves-light pull-right" href="uploads/Mau_import_sinh_vien.xlsx?ver=1.0" name="excel" title="File Excel mẫu">
+            <a class="btn btn-info waves-effect waves-light pull-right" href="uploads/Mau_import_sinh_vien.xlsx?ver=1.0" name="excel" title="File Excel mẫu">
             <i class="fa fa-download"></i> File Excel mẫu
             </a>
          </form>
@@ -40,6 +40,8 @@
                         <th class="text-center">Tên sinh viên</th>
                         <th class="text-center">Giới tính</th>
                         <th class="text-center">Ngày sinh</th>
+                        <th class="text-center">Email</th>
+                        <th class="text-center">Số điện thoại</th>
                         <th class="text-center">Tên lớp</th>
                         <th class="text-center">Trạng thái</th>
                      </tr>
@@ -56,14 +58,16 @@
                         <td>{$v.1}</td>
                         <td class="text-center">{$v.2}</td>
                         <td class="text-center">{$v.3}</td>
+                        <td class="text-center">{$v.4}</td>
+                        <td class="text-center">{$v.5}</td>
                         <td  class="text-center">
-                           {if isset($lopconfig[$v[4]])}{$v.4}{else}
-                           <p style="color: red; ">{$v.4}</p>
+                           {if isset($lopconfig[$v[6]])}{$v.6}{else}
+                           <p style="color: red; ">{$v.6}</p>
                            {/if}
                         </td>
                         <td>
-                           {if isset($trangthaiconfig[$v[5]])}{$v.5}{else}
-                           <p style="color: red; ">{$v.5}</p>
+                           {if isset($trangthaiconfig[$v[7]])}{$v.7}{else}
+                           <p style="color: red; ">{$v.7}</p>
                            {/if}
                         </td>
                      </tr>
@@ -77,4 +81,4 @@
    </div>
 </div>
 <script src="{$url}assets/js/jasny-bootstrap.js"></script>
-<script src="assets/template/js/validator.js"></script>
+<script src="{$url}assets/template/js/validator.js"></script>

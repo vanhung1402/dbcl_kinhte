@@ -99,6 +99,9 @@
                         </a>
                         <ul class="nav nav-second-level">
                             <li>
+                                <a href="{$url}email_user" class="waves-effect"><i class="mdi mdi-email-open fa-fw"></i> <span class="hide-menu">Cập nhật email</span></a>
+                            </li>
+                            <li>
                                 <a href="{$url}doimatkhau" class="waves-effect"><i class="mdi mdi-key-change fa-fw"></i> <span class="hide-menu">Đổi mật khẩu</span></a>
                             </li>
                             <li>

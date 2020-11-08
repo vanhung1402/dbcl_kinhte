@@ -52,6 +52,8 @@
 	$route['lop_hocphan'] 						= 'hethong/Clop_hocphan';
 	$route['donvihocvu']						= 'hethong/Cdonvihocvu';
 	$route['chuyenkhoa']						= 'hethong/Cchuyendonvi';
+	$route['caplaimatkhau']						= 'hethong/Capmatkhau';
+	$route['email_user']						= 'hethong/Cemail_user';
 
 
 	$route['cuockhaosat']	 					= 'quanly/Ckhaosat';

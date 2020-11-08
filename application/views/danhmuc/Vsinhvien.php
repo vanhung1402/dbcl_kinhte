@@ -1,12 +1,3 @@
-<style type="text/css">
-    th{
-        font-weight: 700;
-    }
-    table.table tbody td, table.table thead th{
-        padding: 10px;
-        vertical-align: middle;
-    }
-</style>
 <div class="panel panel-default m-t-5">
     <div class="panel-heading text-uppercase text-center">
         <p>QUẢN LÝ SINH VIÊN</p>
@@ -34,7 +25,7 @@
                         <div class="form-group col-md-4">
                             <label for="gioitinh">Giới tính</label><br>
                             <label class="radio-inline" for="gtnam" >
-                                <input id="gtnam" type="radio" name="gioitinh_sv" value="Nam" {if $sua.gioitinh_sv=="Nam"} checked="" {/if} required=""> 
+                                <input id="gtnam" type="radio" name="gioitinh_sv" value="Nam" {if $sua.gioitinh_sv=="Nam"} checked="" {/if} required="" class=""> 
                                 Nam
                             </label>
                             &nbsp;&nbsp;&nbsp;
@@ -43,6 +34,16 @@
                                 Nữ
                             </label>
                         </div>
+                        <div class="form-group col-md-4">
+                            <label>Email</label>
+                            <input type="text" name="email_sv" class="form-control" value="{if isset($sua)}{$sua.email_sv} {/if}" placeholder="Nhập email sinh viên..."     >
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Số điện thoại</label>
+                            <input type="text" id="sdt_sv" name="sdt_sv" value="{if isset($sua)}{$sua.sdt_sv} {/if}" class="form-control" placeholder="Nhập số điện thoại..." >
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="form-group col-md-4">
                             <label for="lop">Lớp</label>
                             <select class="form-control select2" name="lop" id="lop">

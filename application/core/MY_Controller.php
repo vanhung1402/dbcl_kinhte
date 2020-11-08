@@ -21,7 +21,7 @@
 				}
 	            $uri 					= $this->uri->uri_string();
 	            $link_for_all 			= array(
-	            	'home', 'logout', ''
+	            	'home', 'logout', 'caplaimatkhau', 'email_user', ''
 	            );
 
 	            if (!in_array($uri, $link_for_all)) {
