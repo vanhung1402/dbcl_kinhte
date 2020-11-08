@@ -1,5 +1,5 @@
 <?php
-	class Mkhaosat extends CI_Model{
+	class Mkhaosat extends MY_Model{
 		function __construct(){
 			parent::__construct();
 		}

@@ -6,7 +6,6 @@ class Cthemcanbo extends MY_Controller
 			parent::__construct();
 			$this->load->model('danhmuc/Mcanbo');
 			$this->load->library('Excel');
-			$this->load->helper('download');
 		}
 	public function index(){
 
@@ -22,11 +21,10 @@ class Cthemcanbo extends MY_Controller
 	
 
 		$data = array(
-				// 'message'			=> getMessages(),
 				'thongtin' 			=> $this->Mcanbo->getListcanbo(),
 				'donvi'				=> $this->Mcanbo->getDonvi(),
 				'hocham'			=> $this->Mcanbo->getHocham(),
-				//'hocvi'				=> $this->Mcanbo->getHocvi(),
+				'chucvu'			=> $this->Mcanbo->getChucvu(),
 		);
 
 		if($action = $this->input->post("action")){
@@ -40,37 +38,36 @@ class Cthemcanbo extends MY_Controller
 				$data['macanbo']    	= $this->Mcanbo->getmacb();
 				$data['donviconfig']    = $this->Mcanbo->getDonviConfig();
 				$data['hochamconfig']   = $this->Mcanbo->getHochamConfig();
-				//$data['hocviconfig']  	= $this->Mcanbo->getHocviConfig();
+				$data['chucvuconfig']  	= $this->Mcanbo->getChucvuConfig();
 
 				$ip_canbo = array();
 				foreach ($dataExcel as $k => $v) {
 					$local_flag  = false;
-					if( in_array($v[0], $data['macanbo']) || !isset($data['donviconfig'][$v[4]]) || !isset($data['hochamconfig'][$v[5]]) ){
+					if( in_array($v[0], $data['macanbo']) || !isset($data['donviconfig'][$v[4]]) || !isset($data['hochamconfig'][$v[5]]) || !isset($data['chucvuconfig'][$v[6]])){
 						$local_flag = true;
 						$global_flag = true;
 						$dscb_err[] = $v;
 					}else{
+						//$ma = time();
 						$ab = explode(' ',  trim($v[1])) ;
 						$ten = array_pop($ab);
 						$hovaten		= implode(' ', $ab) ;
 						$ngaydao = array_reverse(explode('/', trim($v[3])));
 						$ngay = implode('-', $ngaydao);
-						array_push($data['macanbo'], $v[0]);
+						//array_push($data['macanbo'], $v[0]);
 						array_push($ip_canbo, array(
-											'ma_cb' 		=> $v[0],
+											'ma_cb' 		=> time().rand(1,999).rand(1000,9999),
+											'ma_doituong'	=> $v[0],
 											'hodem_cb'		=> $hovaten,
 											'ten_cb'		=> $ten,
 											'gioitinh_cb'	=> $v[2],
 											'ngaysinh_cb'	=> $ngay,
 											'ma_donvi' 		=> $data['donviconfig'][$v[4]],
 											'ma_hocham' 	=> $data['hochamconfig'][$v[5]],
-											//'ma_hocvi'		=> $data['hocviconfig'][$v[6]],
+											'ma_chucvu'		=> $data['chucvuconfig'][$v[6]],
 											));
-					
 					}
-					
 				}
-				
 				if(empty($dscb_err)){
 					$this->db->insert_batch("tbl_canbo", $ip_canbo);
 					setMessage("success","Thêm cán bộ thành công");
@@ -103,9 +100,9 @@ class Cthemcanbo extends MY_Controller
 		//  Lấy thông tin cơ bản của file excel
 		// Lấy sheet hiện tại
 		$sheet = $objPHPExcel->getSheet(0); 
-		// Lấy tổng số dòng của file, trong trường hợp này là 6 dòng
+		// Lấy tổng số dòng của file
 		$highestRow = $sheet->getHighestRow(); 
-		// Lấy tổng số cột của file, trong trường hợp này là 4 dòng
+		// Lấy tổng số cột của file
 		$highestColumn = $sheet->getHighestColumn();
 		// Khai báo mảng $rowData chứa dữ liệu
 		//  Thực hiện việc lặp qua từng dòng của file, để lấy thông tin
@@ -138,21 +135,5 @@ class Cthemcanbo extends MY_Controller
             return 0;
         }
 	} 
-
-	// public function download() {   
-	//    	$fileName = "canbo.xlsx";
-	// 	$file = "template/".$fileName;
-	//     	// check file exists    
-	//     if(file_exists ($file)) {
-	//      	// get file content
-	//      	$data = file_get_contents($file);
-	//      	//force download
-	//      	force_download($fileName, $data );
-	//     }else {
-	//      	// Redirect to base url
-	//      	redirect (base_url ());
-	//     }
-	// }
-
 }
 ?>

@@ -1,5 +1,5 @@
 <?php 
-	class Msinhvien extends CI_Model{
+	class Msinhvien extends MY_Model{
 		public function getListsinhvien(){
 			$this->db->select('tbl_sinhvien.*,tbl_lop.ten_lop, dm_trangthai_sinhvien.ten_trangthai_sinhvien');
 			$this->db->from('tbl_sinhvien');

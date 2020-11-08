@@ -1,6 +1,6 @@
 <?php
 
-class Mtaomonhoc extends CI_Model
+class Mtaomonhoc extends MY_Model
 {
     public function get_dsmon()
     {

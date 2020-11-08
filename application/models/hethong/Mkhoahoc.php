@@ -2,7 +2,7 @@
 
 	defined('BASEPATH') OR exit('No direct script access allowed');
 	
-	class Mkhoahoc extends CI_Model{
+	class Mkhoahoc extends MY_Model{
 		function __construct(){
 			parent::__construct();
 		}

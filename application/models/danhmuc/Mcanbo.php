@@ -1,10 +1,11 @@
 <?php 
-	class Mcanbo extends CI_Model{
+	class Mcanbo extends MY_Model{
 		public function getListcanbo(){ 
-			$this->db->select('tbl_canbo.*,tbl_donvi.ten_donvi, dm_hochamhocvi.ten_hocham');
+			$this->db->select('tbl_canbo.*,tbl_donvi.ten_donvi, dm_hochamhocvi.ten_hocham, dm_chucvu.ten_chucvu');
 			$this->db->from('tbl_canbo');
-			$this->db->join('tbl_donvi','tbl_canbo.ma_donvi = tbl_donvi.ma_donvi','inner');
-			$this->db->join('dm_hochamhocvi','tbl_canbo.ma_hocham = dm_hochamhocvi.ma_hocham','inner');
+			$this->db->join('tbl_donvi','tbl_canbo.ma_donvi = tbl_donvi.ma_donvi','left');
+			$this->db->join('dm_hochamhocvi','tbl_canbo.ma_hocham = dm_hochamhocvi.ma_hocham','left');
+			$this->db->join('dm_chucvu','tbl_canbo.ma_chucvu = dm_chucvu.ma_chucvu','left');
 			$this->db->order_by('ten_cb');
 			return $this->db->get()->result_array();
 		}
@@ -37,8 +38,8 @@
 			return $res;
 		}
 
-		public function getHocvi(){
-			$res = $this->db->get('dm_hocvi')->result_array();
+		public function getChucvu(){
+			$res = $this->db->get('dm_chucvu')->result_array();
 			return $res;
 		}
 		public function insert($data){ 
@@ -94,12 +95,12 @@
 			}
 			return $res;
 		}
-		public function getHocviConfig(){
-			$this->db->select("ma_hocvi, ten_hocvi");
-			$temp = $this->db->get("dm_hocvi")->result_array();
+		public function getChucvuConfig(){
+			$this->db->select("ma_chucvu, ten_chucvu");
+			$temp = $this->db->get("dm_chucvu")->result_array();
 			$res = array();
 			foreach ($temp as $k => $v) {
-				$res[$v['ten_hocvi']] = $v['ma_hocvi'];
+				$res[$v['ten_chucvu']] = $v['ma_chucvu'];
 			}
 			return $res;
 		}

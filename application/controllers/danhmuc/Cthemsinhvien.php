@@ -61,13 +61,16 @@ class Cthemsinhvien extends MY_Controller
 								'ten_sv'				=> $ten,
 								'gioitinh_sv'			=> $v[2],
 								'ngaysinh_sv'			=> $ngay,
-								'ma_lop' 				=> $data['lopconfig'][$v[4]],
-								'ma_trangthai_sinhvien' => $data['trangthaiconfig'][$v[5]],
+								'email_sv'				=> $v[4],
+								'sdt_sv'				=> $v[5],
+								'ma_lop' 				=> $data['lopconfig'][$v[6]],
+								'ma_trangthai_sinhvien' => $data['trangthaiconfig'][$v[7]],
 								));
 					}
 					
 				}
 				if(empty($dssv_err)){
+					pr($ip_sv);
 					$this->db->insert_batch("tbl_sinhvien", $ip_sv);
 					setMessage("success","Thêm sinh viên thành công");
 					return redirect("sinhvien");

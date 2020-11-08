@@ -1,5 +1,5 @@
 <?php
-class Mlop_hocphan extends CI_Model{
+class Mlop_hocphan extends MY_Model{
     public function get_donvi($ma_cb){
         $this->db->where('ma_cb',$ma_cb);
         $this->db->join('tbl_canbo','tbl_canbo.ma_donvi = tbl_donvi.ma_donvi');

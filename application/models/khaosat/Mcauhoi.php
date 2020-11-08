@@ -1,6 +1,6 @@
 <?php
 
-	class Mcauhoi extends CI_Model{
+	class Mcauhoi extends MY_Model{
 		function __construct(){
 			parent::__construct();
 		}

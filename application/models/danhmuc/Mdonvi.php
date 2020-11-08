@@ -1,5 +1,5 @@
 <?php 
-	class Mdonvi extends CI_Model{
+	class Mdonvi extends MY_Model{
 		public function getListdonvi(){
 			return $this->db->get('tbl_donvi')->result_array();
 		}

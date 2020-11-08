@@ -76,6 +76,8 @@ class Csinhvien extends MY_Controller
 			'ten_sv' 				=> $ten,
 			'gioitinh_sv'  			=> trim($this->input->post('gioitinh_sv')),
 			'ngaysinh_sv'  			=> $ngay,
+			'email_sv'  			=> trim($this->input->post('email_sv')),
+			'sdt_sv'  				=> trim($this->input->post('sdt_sv')),
 			'ma_lop'				=> trim($this->input->post('lop')),
 			'ma_trangthai_sinhvien'	=> trim($this->input->post('trangthai')),
 		);
@@ -122,6 +124,8 @@ class Csinhvien extends MY_Controller
 			'ten_sv' 				=> $ten,
 			'gioitinh_sv'  			=> trim($this->input->post('gioitinh_sv')),
 			'ngaysinh_sv'  			=> $ngay,
+			'email_sv'  			=> trim($this->input->post('email_sv')),
+			'sdt_sv'  				=> trim($this->input->post('sdt_sv')),
 			'ma_lop'				=> trim($this->input->post('lop')),
 			'ma_trangthai_sinhvien'	=> trim($this->input->post('trangthai')),
 		);

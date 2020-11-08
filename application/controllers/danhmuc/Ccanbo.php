@@ -8,6 +8,8 @@ class Ccanbo extends MY_Controller
 		}
 	public function index(){
 
+		
+		//pr($macanbo);
 		if($this->input->post('them')){
 			return $this->insert();
 		}
@@ -48,7 +50,7 @@ class Ccanbo extends MY_Controller
 				'Macanbo_sudung' 	=> $Macanbo_sudung,
 				'donvi'				=> $this->Mcanbo->getDonvi(),
 				'hocham'			=> $this->Mcanbo->getHocham(),
-				//'hocvi'				=> $this->Mcanbo->getHocvi(),
+				'chucvu'			=> $this->Mcanbo->getChucvu(),
 		);
 		$temp = array(
 			'template'	=> 'danhmuc/Vcanbo', 
@@ -59,23 +61,21 @@ class Ccanbo extends MY_Controller
 	}
 
 	public function insert(){
+		$macanbo 		= $this->_session['ma_canbo'];
 		$ab = explode(' ', trim($this->input->post('hodem_cb'))) ;
 		$ten = array_pop($ab);
 		$hovaten		= implode(' ', $ab) ;	
-
-		// $ngaydao = array_reverse(explode('/', trim($this->input->post('ngaysinh_cb'))));
-		// $ngay = implode('-', $ngaydao);
 		$data 			= array(
-			'ma_cb' 	 		=> trim($this->input->post('ma_cb')),
+			'ma_cb' 	 		=> time().$macanbo,
+			'ma_doituong'		=> trim($this->input->post('ma_doituong')),
 			'hodem_cb' 			=> $hovaten ,
 			'ten_cb' 			=> $ten,
 			'gioitinh_cb'  		=> trim($this->input->post('gioitinh_cb')),
 			'ngaysinh_cb'  		=> trim($this->input->post('ngaysinh_cb')),
 			'ma_donvi'			=> trim($this->input->post('donvi')),
 			'ma_hocham'			=> trim($this->input->post('hocham')),
-			//'ma_hocvi'  		=> trim($this->input->post('hocvi')),
-		);		
-
+			'ma_chucvu'  		=> trim($this->input->post('chucvu')),
+		);	
 		$row = $this->Mcanbo->insert($data);
 		if($row > 0){
 			setMessage('success','Thêm thành công');
@@ -103,14 +103,15 @@ class Ccanbo extends MY_Controller
 		$ngay = implode('-', $ngaydao);
 
 		$data 			= array(
-			'ma_cb' 	 		=> trim($this->input->post('ma_cb')),
+			//'ma_cb' 	 		=> trim($this->input->post('ma_cb')),
+			'ma_doituong'		=> trim($this->input->post('ma_doituong')),
 			'hodem_cb' 			=> $hovaten ,
 			'ten_cb' 			=> $ten,
 			'gioitinh_cb'  		=> trim($this->input->post('gioitinh_cb')),
 			'ngaysinh_cb'  		=> trim($this->input->post('ngaysinh_cb')),
 			'ma_donvi'			=> trim($this->input->post('donvi')),
 			'ma_hocham'			=> trim($this->input->post('hocham')),
-			//'ma_hocvi'  		=> trim($this->input->post('hocvi')),
+			'ma_chucvu'  		=> trim($this->input->post('chucvu')),
 		);	
 		$id = $this->input->post('capnhat');
 

@@ -1,5 +1,5 @@
 <?php
-class Mcanbo_mon extends CI_Model
+class Mcanbo_mon extends MY_Model
 {
     public function get_thongtin_cb($ma_cb){
         $this->db->select('ma_hocham, ngaysinh_cb, ma_cb, hodem_cb, ten_cb');

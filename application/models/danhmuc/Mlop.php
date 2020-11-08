@@ -1,5 +1,5 @@
 <?php 
-	class Mlop extends CI_Model{
+	class Mlop extends MY_Model{
 		public function getListlop(){
 			$this->db->select('tbl_lop.*,tbl_khoahoc.namhoc,tbl_canbo.hodem_cb, tbl_canbo.ten_cb');
 			$this->db->from('tbl_lop');
