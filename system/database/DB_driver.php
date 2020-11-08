@@ -637,12 +637,12 @@ abstract class CI_DB_driver {
 			$file = "./LOGS/".date('m-Y')."/".date('d-m-Y').".txt";
 			if(!file_exists($file)){
 				$myfile = fopen($file, "w") or die("Unable to open file!");
-				$txt = $session['ma_canbo']."---".date('d/m/Y H:i:s').'---'.$sql."\r\n";
+				$txt = $session['username']."---".date('d/m/Y H:i:s').'---'.$sql."\r\n";
 				fwrite($myfile, $txt);
 				fclose($myfile);
 			}else{
 				$myfile = fopen($file, "a") or die("Unable to open file!");
-				$txt = $session['ma_canbo']."---".date('d/m/Y H:i:s').'---'.$sql."\r\n";
+				$txt = $session['username']."---".date('d/m/Y H:i:s').'---'.$sql."\r\n";
 				fwrite($myfile, $txt);
 				fclose($myfile);
 			}
