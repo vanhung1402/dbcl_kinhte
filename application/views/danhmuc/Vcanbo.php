@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="form-group col-md-4">
                         <label>Mã đối tượng </label>
-                        <input type="text" name="ma_doituong" class="form-control" value="{if isset($sua)}{$sua.ma_doituong}{/if}" placeholder="Nhập mã cán bộ..."   required>
+                        <input type="text" name="ma_doituong" class="form-control" value="{if isset($sua)}{$sua.ma_doituong}{/if}" placeholder="Nhập mã đối tượng HOU..."   required>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group col-md-4">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-3">
                         <label for="gioitinh">Giới tính</label><br>
                         <label class="radio-inline" for="gtnam" >
                             <input id="gtnam" type="radio" name="gioitinh_cb" value="Nam" {if isset($sua) && $sua.gioitinh_cb=="Nam"} checked="" {/if} required=""> 
@@ -34,48 +34,47 @@
                             Nữ
                         </label>
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-3">
                         <label for="donvi">Đơn vị</label>
                         <select class="form-control select2" name="donvi" id="donvi">
-                            <option value="empty" selected disabled>Chọn đơn vị</option>
+                            <option value="empty" selected disabled>--- Chọn đơn vị ---</option>
                             {foreach $donvi as $key => $value}
                             <option value="{$value['ma_donvi']}"{if !empty($sua)&&$sua.ma_donvi==$value.ma_donvi} selected=""{/if}>{$value['ten_donvi']}</option>
                             {/foreach}
                         </select>
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-3">
                         <label for="hocham">Học hàm</label>
                         <select class="form-control select2" name="hocham" id="hocham">
-                            <option value="empty" selected disabled>Chọn học hàm</option>
+                            <option value="empty" selected disabled>--- Chọn học hàm ---</option>
                             {foreach $hocham as $key => $value}
                             <option value="{$value['ma_hocham']}"{if !empty($sua)&&$sua.ma_hocham==$value.ma_hocham} selected=""{/if}>{$value['ten_hocham']}&nbsp;</option>
                             {/foreach}
                         </select>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-3">
                         <label for="chucvu">Chức vụ</label>
                         <select class="form-control select2" name="chucvu" id="chucvu">
-                            <option value="empty" selected disabled>Chọn chức vụ</option>
+                            <option value="empty" selected disabled>--- Chọn chức vụ ---</option>
                             {foreach $chucvu as $key => $value}
                             <option value="{$value['ma_chucvu']}"{if !empty($sua)&&$sua.ma_chucvu==$value.ma_chucvu} selected=""{/if}>{$value['ten_chucvu']}&nbsp;</option>
                             {/foreach}
                         </select>
                     </div>
-                    <br>
+                </div>
+                <div class="row">
                     <div class="text-center">
                         {if isset($sua)}
                         <button class="btn btn-success waves-effect waves-light" data-toggle="modal" type="submit" name="capnhat" value="{$sua.ma_cb}" title="Cập nhật">
                             <span class="btn-label">
                                 <i class="fa fa-edit"></i>
-                            </span> Cập nhập
+                            </span><strong>CẬP NHẬT</strong>
                         </button>
                         {else}
                         <button class="btn btn-info waves-effect waves-light" data-toggle="modal"  type="submit" name="them" value="+" title="Thêm" id="them">
                             <span class="btn-label">
                                 <i class="fa fa-plus"></i>
-                            </span>Thêm
+                            </span><strong>THÊM CÁN BỘ</strong>
                         </button>
                         {/if}
                     </div>

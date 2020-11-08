@@ -11,16 +11,16 @@
                                 <i class="glyphicon glyphicon-file fileinput-exists"></i> 
                                 <span class="fileinput-filename"></span>
                             </div> <span class="input-group-addon btn btn-default btn-file"> 
-                                <span class="fileinput-new">Thêm file</span> <span class="fileinput-exists">Sửa</span>
+                                <span class="fileinput-new">Chọn tệp</span> <span class="fileinput-exists">Sửa</span>
                             <input type="file" name="insert_excel" accept=".xlsx, .xls"  id="uploadExcel" required=""> </span> <a href="javascript:void(0)" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Xóa</a> 
                         </div>
                     </div>
                     <button type="submit" name="action" value="themcanbo" class="btn btn-success waves-effect waves-light" data-toggle="modal" >
                         <span class="btn-label">
-                            <i class="fa fa-plus"></i>
-                        </span>Upload
+                            <i class="fa fa-upload"></i>
+                        </span><strong>TẢI LÊN</strong>
                     </button>
-                <a class="btn btn-info waves-effect waves-light pull-right" href="uploads/Mau_import_can_bo.xlsx?ver=1.0" name="excel" title="File Excel mẫu">
+                <a class="btn btn-info waves-effect waves-light pull-right" href="uploads/Mau_import_can_bo.xlsx?ver=1.1" name="excel" title="File Excel mẫu">
                    <i class="fa fa-download"></i> File Excel mẫu
                 </a>        
             </form><br>

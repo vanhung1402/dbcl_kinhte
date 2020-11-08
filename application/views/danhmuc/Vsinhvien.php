@@ -7,22 +7,19 @@
             <form method="post" action=""  data-toggle="validator">
                 <div class="container-fluid">
                     <div class="row">
-                        <br>
-                        <div class="form-group col-md-4">
-                            <label for="exampleInputEmail1">Mã sinh viên</label>
-                            <input type="text" name="ma_sv" class="form-control" value="{if isset($sua)}{$sua.ma_sv}{/if}" placeholder="Nhập mã sinh viên..." required>
-                        </div>
                         <div class="form-group col-md-4">
                             <label for="exampleInputEmail1">Họ và tên</label>
                             <input type="text" name="hodem_sv" class="form-control" value="{if isset($sua)}{$sua.hodem_sv} {$sua.ten_sv}{/if}" placeholder="Nhập tên sinh viên..." required>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
+                            <label for="exampleInputEmail1">Mã sinh viên</label>
+                            <input type="text" name="ma_sv" class="form-control" value="{if isset($sua)}{$sua.ma_sv}{/if}" placeholder="Nhập mã sinh viên..." required>
+                        </div>
+                        <div class="form-group col-md-3">
                             <label for="ngaysinh">Ngày sinh</label>
                             <input type="text" id="ngaysinh" name="ngaysinh_sv" value="{if isset($sua)}{date('d/m/Y', strtotime(str_replace('-', '/', $sua.ngaysinh_sv)))}{/if}" class="form-control" data-mask="99/99/9999" placeholder="Nhập ngày sinh..." required autocomplete="off">
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-2">
                             <label for="gioitinh">Giới tính</label><br>
                             <label class="radio-inline" for="gtnam" >
                                 <input id="gtnam" type="radio" name="gioitinh_sv" value="Nam" {if $sua.gioitinh_sv=="Nam"} checked="" {/if} required="" class=""> 
@@ -34,17 +31,17 @@
                                 Nữ
                             </label>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="form-group col-md-4">
                             <label>Email</label>
                             <input type="text" name="email_sv" class="form-control" value="{if isset($sua)}{$sua.email_sv} {/if}" placeholder="Nhập email sinh viên..."     >
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
                             <label>Số điện thoại</label>
                             <input type="text" id="sdt_sv" name="sdt_sv" value="{if isset($sua)}{$sua.sdt_sv} {/if}" class="form-control" placeholder="Nhập số điện thoại..." >
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
                             <label for="lop">Lớp</label>
                             <select class="form-control select2" name="lop" id="lop">
                                 <option value="empty" selected disabled>Chọn lớp</option>
@@ -53,7 +50,7 @@
                                 {/foreach}
                             </select>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-2">
                             <label for="trangthai">Trạng thái</label>
                             <select class="form-control select2" name="trangthai" id="trangthai">
                                 <option value="empty" selected disabled>Chọn trạng thái</option>
@@ -64,8 +61,6 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <label for="">&nbsp;</label>
-                        <br> 
                         {if isset($sua)}
                         <button class="btn btn-success waves-effect waves-light" data-toggle="modal"  type="submit" name="capnhat" value="{$sua.ma_sv}" title="Cập nhật">
                             <span class="btn-label">
@@ -76,7 +71,7 @@
                         <button class="btn btn-info waves-effect waves-light" data-toggle="modal" type="submit" name="them" value="+" title="Thêm" id="them">
                             <span class="btn-label">
                                 <i class="fa fa-plus"></i>
-                            </span><strong>THÊM</strong>
+                            </span><strong>THÊM SINH VIÊN</strong>
                         </button>
                         {/if}
                     </div>
@@ -87,14 +82,13 @@
                 <div class="panel-body table-responsive">
                     <div class="loc row">
                         <div class="col-sm-8">
-                            <div class="input-group">
-                                <span class="input-group-addon">Tìm kiếm:</span>
+                            <div class="form-group">
                                 <input type="text" class="form-control" name="key" id="key" placeholder="Nhập tên hoặc mã sinh viên...">
                             </div>
                         </div>
                         <div class="col-sm-4 text-right">
                             <button class="fcbtn btn btn-sm btn-outline btn-info btn-1e" name="action" value="loc">
-                                    <i class="fa fa-search"></i>
+                                    <strong><i class="fa fa-search"></i> &nbsp; TÌM SINH VIÊN</strong>
                                 </button>
                         </div>
                     </div>
@@ -106,6 +100,8 @@
                                 <th class="text-center">Tên sinh viên</th>
                                 <th class="text-center">Ngày sinh</th>
                                 <th class="text-center">Giới tính</th>
+                                <th class="text-center">Email</th>
+                                <th class="text-center">Điện thoại</th>
                                 <th class="text-center">Tên lớp</th>
                                 <th class="text-center">Trạng thái</th>
                                 <th class="text-center" style="width: 120px;">Tác vụ</th>
@@ -119,8 +115,10 @@
                                 <td>{$val.hodem_sv} {$val.ten_sv}</td>
                                 <td class="text-center">{date('d/m/Y', strtotime(str_replace('-', '/', $val.ngaysinh_sv)))}</td>
                                 <td class="text-center">{$val.gioitinh_sv}</td>
+                                <td>{$val.email_sv}</td>
+                                <td class="text-center">{$val.sdt_sv}</td>
                                 <td class="text-center">{$val.ten_lop}</td>
-                                <td class="text-center">{$val.ten_trangthai_sinhvien}</td>
+                                <td>{$val.ten_trangthai_sinhvien}</td>
                                
                                 <td>
                                     <div class="text-center">
@@ -148,6 +146,7 @@
 <script src="assets/template/js/validator.js"></script>
 <script type="text/javascript">
     $(document).ready(() => {
+        $('#container').attr('class', 'container-fluid');
         $(".remove").on("click", e => {
             showMessage("error", "Giá trị này đang được sử dụng");
         });
