@@ -61,4 +61,7 @@
 	$route['khaosat'] 							= 'quanly/Ckhaosat';
 	$route['phieukhaosat/hoctap'] 				= 'quanly/Ckhaosat/printForm';
 
+	$route['baotri'] 							= 'maintenance/Cmaintenance';
+
 	$route['chuanhoa'] 							= 'chuanhoa/Cchuanhoa';
+
