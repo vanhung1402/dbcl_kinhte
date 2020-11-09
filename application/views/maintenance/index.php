@@ -8,7 +8,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/maintenance/assets/img/favicon.png" rel="icon">
+    <link href="assets/images/logo_hou.png" rel="icon">
     <link href="assets/maintenance/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -32,19 +32,19 @@
             <div class="countdown d-flex justify-content-center" data-count="2020/11/10">
                 <div>
                     <h3>%D</h3>
-                    <h4>Days</h4>
+                    <h4>Ngày</h4>
                 </div>
                 <div>
                     <h3>%H</h3>
-                    <h4>Hours</h4>
+                    <h4>Giờ</h4>
                 </div>
                 <div>
                     <h3>%M</h3>
-                    <h4>Minutes</h4>
+                    <h4>Phút</h4>
                 </div>
                 <div>
                     <h3>%S</h3>
-                    <h4>Seconds</h4>
+                    <h4>Giây</h4>
                 </div>
             </div>
         </div>

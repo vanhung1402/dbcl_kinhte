@@ -98,9 +98,11 @@
                             <span class="hide-menu"> <small class="hidden-xs hidden-sm">Xin chào, </small>{$ten}<span class="fa arrow"></span></span>
                         </a>
                         <ul class="nav nav-second-level">
+                            {if ($quyen == 'sinhvien')}
                             <li>
                                 <a href="{$url}email_user" class="waves-effect"><i class="mdi mdi-email-open fa-fw"></i> <span class="hide-menu">Cập nhật email</span></a>
                             </li>
+                            {/if}
                             <li>
                                 <a href="{$url}doimatkhau" class="waves-effect"><i class="mdi mdi-key-change fa-fw"></i> <span class="hide-menu">Đổi mật khẩu</span></a>
                             </li>

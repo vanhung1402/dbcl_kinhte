@@ -68,17 +68,12 @@
                     {/if}
                 </form>
                 <p>Hỗ trợ kỹ thuật: <strong>0399 220 924 - 0394 684 487</strong></p>
-                <div><a href="{$url}caplaimatkhau">Quên mật khẩu?</a></div>
+                <div><a href="{$url}caplaimatkhau">Quên mật khẩu?</a> (dành cho sinh viên)</div>
             </div>
         </div>            
 
 
     </section>
-    <script type="text/javascript">
-        function fillPassword(){
-            document.getElementById('password').value = 'ffc_dbcl2020';
-        }
-    </script>
     <!-- jQuery -->
     <script src="{$url}assets/plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->

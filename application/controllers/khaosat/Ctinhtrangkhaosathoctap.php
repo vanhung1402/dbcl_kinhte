@@ -321,7 +321,7 @@
 			array_push(
 				$array_x_align,
 				'A8:A' . ($start - 1),
-				'C8:F' . ($start - 1),
+				'C8:F' . ($start - 1)
 			);
 
             for ($i = 1; $i < $start_border; $i++) {
@@ -456,7 +456,7 @@
                 'D' => 12,
                 'E' => 8,
                 'F' => 8,
-                'G' => 45,
+                'G' => 70,
             );
 
             /*Thêm border vào tất cả*/
@@ -525,15 +525,15 @@
             if (empty($tinhtrang['dssinhvien'])) {
             	array_push(
         			$array_merge,
-        			'A' . $start . ':' . $column_end . $start,
+        			'A' . $start . ':' . $column_end . $start
         		);
         		array_push(
         			$array_x_align,
-        			'A' . $start . ':' . $column_end . $start,
+        			'A' . $start . ':' . $column_end . $start
         		);
         		array_push(
         			$array_bold,
-        			'A' . $start . ':' . $column_end . $start,
+        			'A' . $start . ':' . $column_end . $start
         		);
         		$array_content['A' . $start] 		= 'Danh sách trống';
             }else{
@@ -558,7 +558,7 @@
 		            			'C' . $start . ':C' . ($start + $sodong),
 		            			'D' . $start . ':D' . ($start + $sodong),
 		            			'E' . $start . ':E' . ($start + $sodong),
-		            			'F' . $start . ':F' . ($start + $sodong),
+		            			'F' . $start . ':F' . ($start + $sodong)
 		            		);
 
 		            		foreach ($ttsv['chuakhaosat'] as $mcks) {
@@ -578,7 +578,7 @@
 				$array_x_align,
 				'A8:B' . ($start - 1),
 				'D8:D' . ($start - 1),
-				'F8:F' . ($start - 1),
+				'F8:F' . ($start - 1)
 			);
 
             for ($i = 1; $i < $start_border; $i++) {

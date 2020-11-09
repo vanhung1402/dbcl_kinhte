@@ -26,7 +26,7 @@
 
 	                    <div class="form-group text-center">
 	                    	<button class="fcbtn btn btn-sm btn-outline btn-info btn-1e" name="action" value="loc">
-		                        <i class="fa fa-search"></i>
+		                        <strong><i class="fa fa-search"></i> &nbsp; LỌC</strong>
 		                    </button>
 	                    </div>
         			</form>

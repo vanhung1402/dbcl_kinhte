@@ -21,7 +21,7 @@
                   <i class="fa fa-upload"></i>
                </span><strong>TẢI LÊN</strong>
             </button>
-            <a class="btn btn-info waves-effect waves-light pull-right" href="uploads/Mau_import_sinh_vien.xlsx?ver=1.0" name="excel" title="File Excel mẫu">
+            <a class="btn btn-info waves-effect waves-light pull-right" href="uploads/Mau_import_sinh_vien.xlsx?ver=1.01" name="excel" title="File Excel mẫu">
             <i class="fa fa-download"></i> File Excel mẫu
             </a>
          </form>

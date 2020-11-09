@@ -302,6 +302,7 @@ $(document).ready(function() {
 		let ma_phieu = $(this).attr('phieu-id');
 		let this_html = $(this).html();
 		$(this).html(`${fa_loading} Đang xử lý dữ liệu...`);
+		$(this).attr('disabled', 'value');
 
 		submitQuestion(ma_phieu);
 
@@ -310,13 +311,13 @@ $(document).ready(function() {
 		}, 250);
 	});
 
-	$(document).keydown(function(e) {
+	/*$(document).keydown(function(e) {
 		if ((e.which == '115' || e.which == '83' ) && (e.ctrlKey || e.metaKey) && !(e.altKey)){
 			$('#luu').trigger('click');
 		    return false;
 		}
 		return true; 
-	});
+	});*/
 
 	function submitQuestion(ma_phieu){
 		let array_answer_question = [];
@@ -365,6 +366,7 @@ $(document).ready(function() {
 		})
 		.always(function() {
 			$('#back2Top').click();
+			$('#luu').removeAttr('disabled');
 		});
 	}
 

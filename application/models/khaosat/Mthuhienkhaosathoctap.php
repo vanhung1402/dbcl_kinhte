@@ -132,7 +132,7 @@
 			$this->db->insert_batch('tbl_chitietphieu_hoctap', $chitiet);
 			$row_insert 		= $this->db->affected_rows();
 
-			if ($this->db->trans_status() === FALSE){
+			if ($this->db->trans_status() == FALSE){
 				$this->db->trans_rollback();
 				return 0;
 			} else {

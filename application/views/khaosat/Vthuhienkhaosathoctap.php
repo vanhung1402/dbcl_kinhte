@@ -70,7 +70,7 @@
 		        </div>
 		    </div>
 		    <div class="panel-footer text-center"> 
-				<button class="btn btn-success waves-effect waves-light hidden" type="button" id="luu" title="Các bạn có thể nhấn CTRL + S để lưu">
+				<button class="btn btn-success waves-effect waves-light hidden" type="button" id="luu">
 					<span class="btn-label">
 						<i class="fa fa-check"></i>
 					</span>
@@ -84,4 +84,4 @@
 </div>
 
 <script type="text/javascript" src="{$url}assets/plugins/icheck/icheck.js?v=1.0.2"></script>
-<script type="text/javascript" src="{$url}assets/js/khaosat/thuchienkhaosat.js?v=1.0.2"></script>
+<script type="text/javascript" src="{$url}assets/js/khaosat/thuchienkhaosat.js?v=1.0.3"></script>

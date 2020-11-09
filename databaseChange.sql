@@ -8,6 +8,18 @@ CREATE TABLE dm_chucvu(
     ten_chucvu VARCHAR(100) NOT NULL,
     thutu_chucvu INT
 );
+INSERT INTO `tbl_router` (`id_route`, `ten_route`, `icon_route`, `thutu_route`, `id_menu`, `hienthi_route`) VALUES
+('importdangkymon', 'Import đăng ký môn', 'mdi mdi-import', 4, 3, b'1');
+
+
+INSERT INTO `tbl_phanquyen` (
+`ma_quyen` ,
+`id_route` ,
+`trangthai`
+)
+VALUES (
+'giaovukhoa', 'importdangkymon', ''
+);
 
 ALTER TABLE `tbl_canbo` ADD `ma_chucvu` VARCHAR(25) NULL AFTER `ma_hocvi`;
 ALTER TABLE `tbl_canbo` ADD FOREIGN KEY (`ma_chucvu`) REFERENCES `dm_chucvu`(`ma_chucvu`) ON DELETE RESTRICT ON UPDATE CASCADE; 

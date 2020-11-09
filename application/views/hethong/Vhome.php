@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{$url}assets/css/hethong/home.css
+<link rel="stylesheet" href="{$url}assets/css/hethong/home.css?ver=1.0
 ">
 
 <div class="box fadeIn">
@@ -29,13 +29,14 @@
 	                {/if}
 	            </div>
 			</div>
-			<div class="col-md-6 text-center{if $sinhvien.ks.sophieutrong == 0} col-md-offset-3{/if}">
+			<div class="col-md-6{if $sinhvien.ks.sophieutrong == 0} col-md-offset-3{/if} text-center">
 				<hr>
 				<div class="white-box">
 	                <h3 class="box-title text-info text-center"><strong>THÔNG TIN SINH VIÊN</strong></h3>
 	                <div class="info">
 	                	<p><i class="ti-user"></i> &nbsp; Họ và tên: <strong><i>{trim($sinhvien.tt.hodem_sv)} {$sinhvien.tt.ten_sv}</i></strong></p>
 	                	<p><i class="ti-bookmark-alt"></i> &nbsp; Lớp hành chính: <strong><i>{$sinhvien.tt.ten_lop}</i></strong></p>
+	                	<p><i class="ti-email"></i> &nbsp; Email: <strong><i>{if $sinhvien.tt.email_sv != ''}{$sinhvien.tt.email_sv}{else}<a href="{$url}email_user">Cập nhật mail ngay</a>{/if}</i></strong></p>
 	                	<p><i class="ti-layout-media-overlay"></i> &nbsp; Trạng thái: <strong><i>{trim($sinhvien.tt.ten_trangthai_sinhvien)}</i></strong></p>
 	                </div>
 	            </div>
